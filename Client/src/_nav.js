@@ -21,13 +21,17 @@ export default {
           url: '/login/teacher',
         },
         {
-          name: 'List',
-          url: '/list/teachers',
-        },
-        {
           name: 'Attendance',
           url: '/attendance',
-        }
+        },
+        {
+          name: "Student's List",
+          url: '/list/students',
+        },
+        {
+          name: "Teacher's List",
+          url: '/list/teachers',
+        },
       ],
     },
     {
@@ -44,10 +48,6 @@ export default {
         {
           name: 'Login',
           url: '/login/student',
-        },
-        {
-          name: 'List',
-          url: '/list/students',
         }
       ],
     },

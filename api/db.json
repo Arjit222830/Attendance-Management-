@@ -65,6 +65,12 @@
       "email": "arjitbhandari222830@gmail.com",
       "password": "jjihuiojoi",
       "id": 12
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Arjitdds",
+      "id": 13
     }
   ],
   "student": [
@@ -77,6 +83,12 @@
       "email": "arjitbhandari222830@gmail.com",
       "password": "Arjit222830@",
       "id": 2
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandad@jdis",
+      "password": "Shahrukh khan",
+      "id": 3
     }
   ]
 }
