@@ -27,7 +27,7 @@ const Students = (props)=> {
         return <>Loading...</>
 
     return  (
-        <div className="item">
+        <div className="table-responsive-sm">
             <table class="table table-borderless">
                 <thead>
                     <tr>
