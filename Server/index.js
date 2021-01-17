@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const config = require('config');
+const path = require('path');
 const cors= require('cors');
 const students = require('./routes/students');
 const teachers = require('./routes/teachers');
@@ -28,6 +29,19 @@ app.use('/student' , students);
 app.use('/teacher' , teachers);
 app.use('/student/login' , authStudents);
 app.use('/teacher/login' , authTeachers);
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../Client/build')));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname ,'..','Client','build','index.html'));
+    }); 
+  }
+  else{
+    app.use(express.static(path.join(__dirname, '../Client/public')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname+'/../Client/public/index.html'));
+    });
+}
 
 
 const port=process.env.PORT || 8000 ;
