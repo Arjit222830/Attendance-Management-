@@ -15,7 +15,6 @@ const pageList = [
     path: '/home',
     component: Dashboard,
   },
-
   {
     name: 'Sub Navigation',
     path: '/pages/subnav',

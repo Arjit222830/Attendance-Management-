@@ -21,17 +21,27 @@ export const timing_invalid = ()=>{
 };
 
 export const signIn= (formValues)=> async (dispatch)=>{
-    const response = await axios.post('/student/login', {...formValues} );
+    let response;
+    if(formValues.person=="teacher")
+        response= await axios.post('/teacher/login', {...formValues} );
+    else
+        response = await axios.post('/student/login', {...formValues} );
     console.log(response.data);
-    dispatch({type: SIGN_IN, payload: response.data});
-    alert('STUDENT LOGIN SUCCESSFUL');
+    if(response.data.status==200)
+        dispatch({type: SIGN_IN, payload: {name: response.data.name,token:response.data.token}});
+
+    alert(response.data.message);
+    history.push('/');
 };
 
 export const addStudent= (formValues)=> async (dispatch)=>{
     const response = await axios.post('/student', {...formValues} );
     console.log(response.data);
-    dispatch({type: ADD_STUDENT, payload: response.data});
-    alert('STUDENT REGISTRATION SUCCESSFUL');
+    if(response.data.status==200)
+        dispatch({type: ADD_TEACHER, payload: response.data.payload});
+    
+    alert(response.data.message);
+    history.push('/');
 };
 
 export const fetchStudents= () => async (dispatch) => {
@@ -60,13 +70,15 @@ export const updateStudent= (id, formValues)=> async (dispatch)=> {
 
 export const addTeacher= (formValues)=> async (dispatch)=>{
     const response = await axios.post('/teacher', {...formValues} );
-    console.log(response.data);
-    dispatch({type: ADD_TEACHER, payload: response.data});
-    alert('Teacher REGISTRATION SUCCESSFUL');
-    history.push('/home');
+    if(response.data.status==200)
+        dispatch({type: ADD_TEACHER, payload: response.data.payload});
+    
+    alert(response.data.message);
+    history.push('/');
 };
 
 export const fetchTeachers= () => async (dispatch) => {
+    console.log("fsds");
     const response= await axios.get('/teacher');
     dispatch({type: FETCH_TEACHERS, payload: response.data});
 };

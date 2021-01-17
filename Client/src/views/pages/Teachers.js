@@ -15,20 +15,23 @@ const Teachers = (props)=> {
         return  props.teachers.map( (teacher) =>{
             return (
                 <tr>
-                    <th scope="row">{teacher.id}</th>
+                    <th scope="row">{teacher._id}</th>
                     <td>{teacher.name}</td>
                     <td>{teacher.email}</td>
                 </tr>
             )
         });  
     }
+
+    if(!props.auth.isSignedIn || !props.auth.token)
+        return <>Not Logged In</>
     
     if(!props.teachers)
         return <>Loading...</>
 
     return  (
         <div className="table-responsive-sm">
-            <table class="table table-borderless">
+            <table className="table table-borderless">
                 <thead>
                     <tr>
                         <th scope="col">S.No</th>
@@ -49,6 +52,7 @@ const mapStateToProps= (state)=>{
     console.log(state);
     return { 
         teachers: Object.values(state.teachers),
+        auth: state.auth
     };
     
 };

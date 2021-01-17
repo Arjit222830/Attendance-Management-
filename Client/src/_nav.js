@@ -56,7 +56,7 @@ export default {
   bottom: [
     {
       name: 'Attendance Management System',
-      url: 'https://github.com/NiceDash/Vibe',
+      url: 'https://github.com/Arjit222830/Attendance-Management-',
       icon: 'GitHub',
       external: true,
       target: '_blank',

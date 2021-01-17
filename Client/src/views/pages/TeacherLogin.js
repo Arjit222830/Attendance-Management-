@@ -6,8 +6,8 @@ import Form from '../../vibe/helpers/Form';
 class TeacherLogin extends React.Component {
   
     onSubmit= (formValues) => {
-        console.log(formValues);
-        this.props.signIn(formValues);
+        console.log({ ...formValues, person:"teacher" });
+        this.props.signIn({ ...formValues, person:"teacher" });
     }      
 
     render() {

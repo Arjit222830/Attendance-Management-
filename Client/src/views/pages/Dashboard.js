@@ -4,6 +4,8 @@ import sassFeature from '../../assets/images/sass-feature.svg';
 import bootstrapFeature from '../../assets/images/bootstrap-feature.svg';
 import responsiveFeature from '../../assets/images/responsive-feature.svg';
 import { Card, CardBody, Row, Col } from 'reactstrap';
+import { connect } from 'react-redux';
+import { fetchStudents } from '../../actions';
 
 class Dashboard extends Component {
   render() {
@@ -92,4 +94,13 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+
+const mapStateToProps= (state)=>{
+  console.log(state);
+  return { 
+      students: Object.values(state.students),
+  };
+  
+};
+
+export default connect(mapStateToProps,{fetchStudents})(Dashboard);

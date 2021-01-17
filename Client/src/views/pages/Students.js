@@ -22,6 +22,9 @@ const Students = (props)=> {
             )
         });  
     }
+
+    if(!props.auth.isSignedIn)
+        return <>Not Logged In</>
     
     if(!props.students)
         return <>Loading...</>
@@ -49,6 +52,7 @@ const mapStateToProps= (state)=>{
     console.log(state);
     return { 
         students: Object.values(state.students),
+        auth: state.auth
     };
     
 };

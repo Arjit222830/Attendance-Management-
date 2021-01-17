@@ -16,7 +16,7 @@ const Attendance = (props)=> {
     const onSubmit= async(formValues) =>{
         let c=0;
         await props.students.map((student)=> {
-            if(formValues[`attendance-${student.id}`]==='1')
+            if(formValues[`attendance-${student._id}`]==='1')
                 c++;
         });
         setPresent(c);
@@ -44,7 +44,7 @@ const Attendance = (props)=> {
         return  props.students.map( (student) =>{
             return (
                 <tr>
-                    <th scope="row">{student.id}</th>
+                    <th scope="row">{student._id}</th>
                     <td>{student.name}</td>
                     <td>{student.email}</td>
                     <td>
@@ -59,10 +59,10 @@ const Attendance = (props)=> {
                         
                         <div className="row">
                             <div className="col-3">
-                                <Field name={`attendance-${student.id}`} component={renderInput} type="radio" value="1" width="5vw" />
+                                <Field name={`attendance-${student._id}`} component={renderInput} type="radio" value="1" width="5vw" />
                             </div>
                             <div className="col-3">
-                                <Field name={`attendance-${student.id}`} component={renderInput} type="radio" value="0" width="5vw" />
+                                <Field name={`attendance-${student._id}`} component={renderInput} type="radio" value="0" width="5vw" />
                             </div>
                         </div>
                         
@@ -71,6 +71,9 @@ const Attendance = (props)=> {
             )
         });  
     }
+
+    if(!props.auth.isSignedIn || !props.auth.token)
+        return <>Not Logged In</>
     
     if(!props.students)
         return <>Loading...</>
@@ -85,7 +88,7 @@ const Attendance = (props)=> {
                     <table class="table table-borderless">
                         <thead>
                             <tr>
-                                <th scope="col">S.No</th>
+                                <th scope="col">ID.No</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Attendance</th>
@@ -107,13 +110,14 @@ const mapStateToProps= (state)=>{
     console.log(state);
     return { 
         students: Object.values(state.students),
-        size: Object.values(state.students).length
+        size: Object.values(state.students).length,
+        auth: state.auth
     };
     
 };
 
 const Form= reduxForm({
-    form: 'fetch_students'
+    form: 'fetch_students',
 })(Attendance);
 
 export default connect(mapStateToProps,{fetchStudents})(Form);
