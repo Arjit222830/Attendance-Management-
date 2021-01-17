@@ -11,5 +11,5 @@ exports.authTeachers = async (req , res) => {
         return res.send({status:400,message:'Invalid email or password'});
 
     const token = teacher.generateAuthToken();
-    res.send({status:200,message:"Successful Logged In",name: teacher.name,token:token});
+    res.set('x-auth-token',token).send({status:200,message:"Successful Logged In",name: teacher.name,token:token});
 };
