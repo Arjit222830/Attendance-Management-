@@ -1,0 +1,82 @@
+{
+  "teacher": [
+    {
+      "id": 1
+    },
+    {
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "j",
+      "id": 2
+    },
+    {
+      "email": "arjit222830@gmail.com",
+      "password": "Arjit222830@",
+      "id": 3
+    },
+    {
+      "email": "arjitbh@vgvh",
+      "password": "gybuyg",
+      "id": 4
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Axdfffcvg",
+      "id": 5
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Axdfffcvg",
+      "id": 6
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Axdfffcvg",
+      "id": 7
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Axdfffcvg",
+      "id": 8
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Axdfffcvg",
+      "id": 9
+    },
+    {
+      "name": "mkjn",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Adcfcvg",
+      "id": 10
+    },
+    {
+      "name": "kmklmk",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "hhiuhiu",
+      "id": 11
+    },
+    {
+      "name": "Arjit Bhandari",
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "jjihuiojoi",
+      "id": 12
+    }
+  ],
+  "student": [
+    {
+      "email": "arjitbhandari0762@gmail.com",
+      "password": "Asdf",
+      "id": 1
+    },
+    {
+      "email": "arjitbhandari222830@gmail.com",
+      "password": "Arjit222830@",
+      "id": 2
+    }
+  ]
+}
